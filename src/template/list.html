@@ -1,0 +1,38 @@
+{{define "list"}}
+<div class="well sidebar-nav">
+  <ul class="nav nav-list">
+    <li class="nav-header">Task List</li>
+	<!-- ko foreach: tasks -->
+
+	<!-- Selected Task -->
+	<!-- ko if: $parent.isSelected($data) -->
+    <li class="active">
+	  <a href="#" data-bind="text: name, event:{click: $parent.select($data)}" ></a>
+	</li>
+	<!-- /ko -->
+
+	<!-- Unselected Task -->
+	<!-- ko ifnot: $parent.isSelected($data) -->
+    <li>
+	  <a href="#" data-bind="text: name, event:{click: $parent.select($data)}"></a>
+	</li>
+	<!-- /ko -->
+
+	<!-- /ko -->
+
+
+	<!-- Delete button -->
+	<a class="btn btn-danger btn-mini" href="">
+	  <i class="icon-trash icon-white"></i>
+	  Delete
+	</a>
+
+	<!-- New button -->
+	<a class="btn btn-primary btn-mini" href="#" data-bind="event:{click: newTask}">
+	  <i class="icon-plus icon-white"></i>
+	  New
+	</a>
+
+  </ul>
+</div>
+{{end}}

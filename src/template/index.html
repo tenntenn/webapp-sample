@@ -1,0 +1,29 @@
+{{define "index"}}
+<html>
+  <head>
+	<meta charset="UTF-8"/>
+	<title>TODO Manager</title>
+	{{template "css"}}
+  </head>
+  <body>
+
+	{{template "menu"}}
+
+	<div class="container-fluid">
+	  <div class="row-fluid">
+		
+		<div class="span3">
+		  {{template "list"}}
+		</div>
+
+		<div class="span9">
+		  {{template "edit"}}
+		</div>
+		
+	  </div> <!-- end of row-fluid -->
+	</div> <!-- end of container-fluid -->
+
+	{{template "js"}}
+  </body>
+</html>
+{{end}}

@@ -1,0 +1,26 @@
+{{define "edit"}}
+<div class="well">
+
+  <!-- No tasks -->
+  <!-- ko ifnot: selected -->
+  <strong>
+	No tasks
+  </strong>
+  <!-- /ko -->
+  
+  <!-- ko if: selected -->
+  <form class="form-horizontal" data-bind="with: selected">
+	<fieldset>
+	  <legend>Legend text</legend>
+    <div class="control-group">
+	  <label class="control-label" for="name">Name: </label>
+      <div class="controls">
+		<input name="name" type="text" data-bind="value: name"/>
+	  </div>
+	</div>
+	</fieldset>
+  </form>
+  <!-- /ko -->
+
+</div>
+{{end}}
